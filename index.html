@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" href="imagens/000.jpg"/>
+		<title> Galeria de Fotos </title>
+        <style>
+			#central{
+				width: 500px;
+				margin: 0 auto;	
+			}
+			.imagens_grandes{
+				width: 500px;
+				height: 390px;
+			}
+			.fg{
+				width:490px;
+				height: 390px;
+				position: absolute;
+				border: ridge 5px #FFEE5B;
+			}
+			.fp{
+				width: 100px;
+				height: 65px;
+				margin-left: 16px;
+				margin-right: -3px;
+				transition: 0.5s;
+				border-radius: 10px;
+				border: ridge 2px #FFEE5B;
+			}
+			.fp:hover{
+				border-radius: 50px;
+				border-color: #DA0000;
+				width: 115px;
+				height: 80px;
+			}
+			#legenda{
+				margin: 15px auto;
+				height: 40px;
+				width: 200px;
+				text-align: center;
+				font-family: helvetica, sans-serif;
+				font-size: 20px;
+				color: #FFE900;
+				background-color: #2176FF;
+				border-radius: 15px;
+				padding: 10px;
+				opacity: 0.8;
+			}
+			#fundo{
+				background-position: center;
+				background-size: contain;
+				background-repeat:no-repeat;
+			}
+		</style>
+        <script src="jquery-3.2.1.min.js"></script>
+        <script>
+			function esconder(tempo){
+				$('.fg').fadeOut(tempo);
+			}
+			function exibir(quem){
+				esconder(1000);
+				legenda = $(quem).attr('title');
+				fundo = $(quem).attr('src');
+				$(quem).fadeIn(1000);
+				$('#legenda').html(legenda);
+				$('#legenda').fadeIn(1000);
+				$('#fundo').attr('background',fundo);
+			}
+		</script>
+	</head>
+	<body id="fundo">
+    	<div id="central">
+        	<div class="imagens_grandes">
+            	<img class="fg" src="imagens/004.jpg" alt="Quadro de Van Gogh" title="Wheatfield with Crows, Van Gogh." id="foto004" />	
+                <img class="fg" src="imagens/002.jpg" alt="Quadro de Leonardo Da Vinci" title="Homem vitruviano, Leonardo Da Vinci."  id="foto002" />	
+                <img class="fg" src="imagens/003.jpg" alt="Quadro de Rafael" title="Escola de Atenas, Rafael." id="foto003" />	
+                <img class="fg" src="imagens/001.jpg" alt="Quadro de Van Gogh" title="Noite Estrelada, Van Gogh." id="foto001" />
+            </div>
+            <p id="legenda"> </p>
+            <div>
+            	<img class="fp" src="imagens/001.jpg" alt="Quadro de Van Gogh" title="Noite Estrelada, Van Gogh." id="foto001" onclick="exibir('#foto001')" />	
+                <img class="fp" src="imagens/002.jpg" alt="Quadro de Leonardo Da Vinci" title="Homem vitruviano, Leonardo Da Vinci." id="foto002" onclick="exibir('#foto002')" />	
+                <img class="fp" src="imagens/003.jpg" alt="Quadro de Rafael" title="Escola de Atenas, Rafael." id="foto003" onclick="exibir('#foto003')" />	
+                <img class="fp" src="imagens/004.jpg" alt="Quadro de Van Gogh" title="Wheatfield with Crows, Van Gogh." id="foto004" onclick="exibir('#foto004')" />	
+            </div>	
+        </div>
+	</body>
+</html>
