@@ -4,70 +4,9 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="shortcut icon" href="imagens/000.jpg"/>
 		<title> Galeria de Fotos </title>
-        <style>
-			#central{
-				width: 500px;
-				margin: 0 auto;	
-			}
-			.imagens_grandes{
-				width: 500px;
-				height: 390px;
-			}
-			.fg{
-				width:490px;
-				height: 390px;
-				position: absolute;
-				border: ridge 5px #FFEE5B;
-			}
-			.fp{
-				width: 100px;
-				height: 65px;
-				margin-left: 16px;
-				margin-right: -3px;
-				transition: 0.5s;
-				border-radius: 10px;
-				border: ridge 2px #FFEE5B;
-			}
-			.fp:hover{
-				border-radius: 50px;
-				border-color: #DA0000;
-				width: 115px;
-				height: 80px;
-			}
-			#legenda{
-				margin: 15px auto;
-				height: 40px;
-				width: 200px;
-				text-align: center;
-				font-family: helvetica, sans-serif;
-				font-size: 20px;
-				color: #FFE900;
-				background-color: #2176FF;
-				border-radius: 15px;
-				padding: 10px;
-				opacity: 0.8;
-			}
-			#fundo{
-				background-position: center;
-				background-size: contain;
-				background-repeat:no-repeat;
-			}
-		</style>
-        <script src="jquery-3.2.1.min.js"></script>
-        <script>
-			function esconder(tempo){
-				$('.fg').fadeOut(tempo);
-			}
-			function exibir(quem){
-				esconder(1000);
-				legenda = $(quem).attr('title');
-				fundo = $(quem).attr('src');
-				$(quem).fadeIn(1000);
-				$('#legenda').html(legenda);
-				$('#legenda').fadeIn(1000);
-				$('#fundo').attr('background',fundo);
-			}
-		</script>
+		<script src="jquery-3.2.1.min.js"></script>
+		<script src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="estilo.css" />
 	</head>
 	<body id="fundo">
     	<div id="central">
